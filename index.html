@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos-calculadora.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Calcula tu descuento Aquí</title>
+</head>
+<body>
+        <header>
+					<h2> Bienvenido a su calculadora de descuento </h2>
+					<img src="./icons/discount.png" alt="icono de descuento">
+        </header>
+				<main>
+					<form action="">
+						<section>
+							<label for="precio-etiqueta"> Precio sin descuento </label>
+							<input type="text" id="precio-etiqueta">
+							<p> $</p>
+						</section>
+						<section>
+							<label for="descuento"> Descuento (%) </label>
+							<input type="text" id="descuento">
+							<p> %</p>
+						</section>
+            <button type="button" class="button-calcule"> Calcular </button>
+            <p> El resultado es:
+                <span class="resultado"> </span> <span> $ </span>
+            </p>
+					</form>
+				</main>
+
+				<script src="calculadora.js"></script>
+</body>
+</html>
