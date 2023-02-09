@@ -14,18 +14,20 @@ header{
     background-color: #006A68;
     margin: 0 auto 20px;
     align-items: center;
+    justify-content: space-around;
+
 }
 header h2{
     color: #FFFFCC;
     text-align: center;
-    font-family: 'Rubik', sans-serif;;
+    font-family: 'Rubik', sans-serif;
+    width: 350px;
 }
 
 header img{
     width: 45px;
     height: 45px;
     text-align: center;
-    padding-right: 15px;
 }
 
 main{
@@ -91,10 +93,19 @@ form button{
 
 form p{
     display: flex;
-    justify-content: space-between;
-    width: 300px;
+    width: 500px;
+
 }
 
 form p span{
     margin-right: 20px;
+    margin-left: 20px;
+    color: #FFFFCC;
+}
+
+.advertencia{
+    color: #D8545D;
+    background-color: white;
+    display: block;
+    width: 250px;
 }
