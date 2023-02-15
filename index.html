@@ -8,30 +8,33 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Calcula tu descuento Aquí</title>
+    <title>Ingresa tu cupón de descuento</title>
 </head>
 <body>
         <header>
-					<h2> Bienvenido a su calculadora de descuento </h2>
-					<img src="./icons/discount.png" alt="icono de descuento">
+					<h2> Ingresa tu cupón de descuento</h2>
+					<img src="./icons/cupon.png" alt="icono de descuento">
         </header>
 				<main>
 					<form action="">
 						<section>
-							<label for="precio-etiqueta"> Precio sin descuento </label>
-							<input type="number" id="precio-etiqueta">
+							<label for="precio-etiqueta" class="precio-label"> Precio sin descuento </label>
+							<input type="number" id="precio-etiqueta" placeholder="Precio">
 							<p> $</p>
 						</section>
-						<section>
-							<label for="descuento"> Descuento (%) </label>
-							<input type="number" id="descuento">
-							<p> %</p>
+						<section id="cupon-section">
+							<label for="cupon" class="cupon-label"> Cupón de Descuento </label>
+							<input type="text" id="cupon" placeholder="Agrega un código">
 						</section>
-            <button type="button" class="button-calcule"> Calcular </button>
-            <p> Resultado:
+            <button type="button" class="button-calcule"> Aplicar Cupón </button>
+            <p class="precio-container"> Precio final:
                 <span class="resultado"> 
 								<span class="advertencia"> 
             </p>
+						<p class="descuento-container">
+							Descuento Aplicado:
+							<span class="descuento-final"> 
+						</p>
 					</form>
 				</main>
 				<script src="calculadora.js"></script>

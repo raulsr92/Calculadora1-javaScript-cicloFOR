@@ -4,7 +4,7 @@
 body{
     width: 550px;
     height: 300px;
-    margin: 0 auto;
+    margin: 20px auto;
 
 }
 header{
@@ -25,8 +25,8 @@ header h2{
 }
 
 header img{
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     text-align: center;
 }
 
@@ -49,7 +49,6 @@ form{
 
 section{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
 }
@@ -58,17 +57,29 @@ section label{
     width: 200px;
     margin-right: 10px;
 }
+.precio-label{
+    margin-right: 125px;
+}
 
 input{
     width: 80px;
     height: 30px;
-    margin-right: 50px;
+    margin-right: 10px;
     border-radius: 10px;
     border: 0;
 }
 
-section p{
-    margin-right: 130px;
+#cupon{
+    width: 130px;
+    outline: none;
+}
+
+#precio-etiqueta{
+    outline: none;
+}
+
+#cupon-section{
+    justify-content:flex-start
 }
 
 form section label, form section p, form p{
@@ -78,17 +89,23 @@ form section label, form section p, form p{
 }
 
 form button{
-    width: 170px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     align-self: center;
     font-weight: 600;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     background-color: #B4B000;
-    border-radius: 15px;
-    border: 2px solid white;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
+    margin-top: 15px;
+    border: none;
+}
+
+form button:hover {
+    border: solid 0.1rem #FFFFCC;
+    box-shadow: 0px 1px 2px 0px #E2E2E3;
 }
 
 form p{
@@ -108,4 +125,9 @@ form p span{
     background-color: white;
     display: block;
     width: 250px;
+    padding-left: 15px;
+}
+
+.descuento-container, .precio-container{
+    margin: 0;
 }
