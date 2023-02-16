@@ -16,7 +16,6 @@ header{
     align-items: center;
     justify-content: space-around;
     border-radius: 10px;
-
 }
 header h2{
     color: #FFFFCC;
@@ -51,7 +50,6 @@ form{
 section{
     display: flex;
     align-items: center;
-
 }
 
 section label{
@@ -122,8 +120,6 @@ form p{
     display: flex;
     width: 500px;
 }
-
-
 
 form p span{
     margin-right: 20px;

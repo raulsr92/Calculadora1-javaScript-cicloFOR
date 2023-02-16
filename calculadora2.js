@@ -1,34 +1,30 @@
-// capturar elementos html <input> en variables
+// Capturar el precio ingresado por usuario
 const precio = document.querySelector("#precio-etiqueta");
 console.log(precio);
 
+// Capturar el cupón ingresado por usuario
 const cupon = document.querySelector("#cupon");
 console.log(cupon.value);
 
-// capturar elementos html <button> en variables (escuchador de evento)
+// Capturar el boton de CALCULAR y agregarle el evento de click
 const botonCalcular = document.querySelector(".button-calcule");
-
 botonCalcular.addEventListener("click", calcularDescuento);
 
-// capturar elemento html del botón LIMPIAR
-
+// Capturar el boton de LIMPIAR y agregarle el evento de click
 const botonClean = document.querySelector(".reset")
-
 botonClean.addEventListener("click", limpiarFormulario);
 
-
-// capturar elemento html para mostrar el precio con descuento
+// Capturar elemento html para mostrar el precio con descuento
 const resultadoFinal = document.querySelector(".resultado");
 console.log(resultadoFinal);
 
-// capturar elemento html para mostrar advertencia
+// Capturar elemento html para mostrar advertencia
 const resultadoFinalAdv = document.querySelector(".advertencia");
 
-// capturar elemento html para mostrar el descuento aplicado por el cupón
-
+// Capturar elemento html para mostrar el descuento aplicado por el cupón
 const dctoFinal = document.querySelector(".descuento-final");
 
-// crear un array que contenga objetos
+// Crear un array que contenga objetos (1 objeto = 1 cupon)
 
 const cupones=[];
 
@@ -54,42 +50,26 @@ cupones.push({
 
 console.log(cupones);
 
-// funcion que se activa al escuchar el evento de click
+// Funcion que se activa al escuchar el evento de click del botón "APLICAR CUPON"
 
-/*
-function calcularDescuento(){	
-	function algoritmo(element){
-		const precioInteger = parseInt(precio.value);
-		const cuponString = cupon.value;
-		if (!precioInteger || !cuponString){
-			resultadoFinalAdv.innerHTML = "No deje campos en blanco porfavor"
-		} else{
-			switch(cuponString){
-				case element.nombre:
-					resultadoFinal.innerHTML = "Su precio con dcto. es " + (precioInteger*(100-element.descuento))/100 + " $";
-					dctoFinal.innerHTML = "Obutvo un dcto. de" + " " + element.descuento + " "+ "%";
-					break;
-				default:
-					resultadoFinal.innerHTML = "El cupón " + cuponString+ " no tiene descuento";
-					dctoFinal.innerHTML = "0"		
-			}
-			}
-		};
-		cupones.forEach(algoritmo);
-};
-*/
 function calcularDescuento(){
-		// Cada vez que hay un nuevo click, refresca los campos
+	// Cada vez que hay un nuevo click, refresca los campos
 		resultadoFinal.innerHTML = "";
 		dctoFinal.innerHTML= "";
-
+	
+	// Capturar solo los valores del precio y el cupon para poder trabajar con ellos
 		const precioInteger = parseInt(precio.value);
 		const cuponString = cupon.value;
+	
+	// Establecer un estado para los elementos que muestran información al usuario para evitar 
+	// superposición de información al momento de la interacción
 		const isResultadoFinalClosed = resultadoFinal.classList.contains("inactive");
 		const isAdvertenciaClosed = resultadoFinalAdv.classList.contains("inactive");
 		const isDctoFinalClosed = dctoFinal.classList.contains("inactive");
 
+		// Condicional para mostrar mensaje en caso se deje un campo en blanco	
 		if (!precioInteger || !cuponString){
+
 			if(!isResultadoFinalClosed){
 				resultadoFinal.classList.add("inactive");
 			}
@@ -113,6 +93,8 @@ function calcularDescuento(){
 				resultadoFinal.classList.remove("inactive");
 			}
 
+			// en caso no hay un campo en blanco, se procede a recorrer el array de los cupones
+
 			for (let i=0; i<cupones.length;i++){
 				console.log(cupones.length)
 				console.log(cupones[i]);
@@ -120,10 +102,15 @@ function calcularDescuento(){
 				if(cuponString==cupones[i].nombre){
 					resultadoFinal.innerHTML = "Su precio con dcto. es " + (precioInteger*(100-(cupones[i].descuento)))/100 + " $";
 					console.log(cupones[i].descuento);
-					dctoFinal.innerHTML = "Obutvo un dcto. de" + " " + (cupones[i].descuento) + " "+ "%";
+					dctoFinal.innerHTML = "Obtuvo un dcto. de" + " " + (cupones[i].descuento) + " "+ "%";
 				} 
 			}
 			console.log(resultadoFinal);
+
+
+			// Condicional para el caso en que el cupón sea uno no existente. Quiere decir que si luego del ciclo FOR
+			// ninguno cupon ingresado por el usuario coincide con los cupones del array, se mostrará un mensaje que el 
+			// cupón no existe
 
 			if (resultadoFinal.innerHTML==""){
 				resultadoFinal.innerHTML = "El cupón " + cuponString+ " no tiene descuento";
@@ -134,7 +121,7 @@ function calcularDescuento(){
 		}
 	}
 
-// función para el botón limpiar
+// Funcion que se activa al escuchar el evento de click del botón "LIMPIAR"
 
 function limpiarFormulario(){
 	resultadoFinal.classList.add("inactive");
