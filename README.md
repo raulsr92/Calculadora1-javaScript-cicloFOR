@@ -7,4 +7,4 @@ Para recorrer el array al momento de que el usuario ingresa un cupón de descuen
 
 
 
-Mira la demo aquí: https://raulsr92.github.io/Calculadora-javaScript/
+Mira la demo aquí: https://raulsr92.github.io/Calculadora1-javaScript-cicloFOR/
